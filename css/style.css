@@ -1,0 +1,455 @@
+/* Les polices de caractères ci-dessous ont été téléchargées sur dafont.com */
+/* Toutes libres de droits et dans le domaine public ♪♫ */
+
+/* Les photographies ont été téléchargées sur pixabay.com */
+/* Toutes libres de droits et dans le domaine public ♪♫ */
+
+/* "clavier"    : https://pixabay.com/fr/photos/piano-m%C3%A9lodie-classique-musique-558452/ */
+/* "lettre"     : https://pixabay.com/fr/photos/vieilles-lettres-des-lettres-436503/ */
+/* "partition"  : https://pixabay.com/fr/photos/chopin-notes-la-musique-noteblatt-62928/ */
+
+/* Les svg et extraits sonores ont été réalisés par etinmus13 ♪♫ */
+
+/* fonts déplacées dans assets/fonts */
+@font-face {
+  font-family: font1;
+  src: url(../assets/fonts/ScratchedLetters.ttf), format("ttf");
+  /* La propriété font-display détermine la façon dont une fonte est affichée selon qu'elle ait été chargée et prête à être utilisée.
+  bon ça c'est ce que j'ai lu, je n'ai quasiment jamais téléchargé de fonts */
+  font-display: block;
+}
+
+@font-face {
+  font-family: font2;
+  src: url(../assets/fonts/Abuget.ttf), format("ttf");
+  font-display: block;
+}
+
+@font-face {
+  font-family: font3;
+  src: url(../assets/fonts/OldStyle.ttf), format("ttf");
+  font-display: block;
+}
+/* donner des noms plus "significatifs" aux roots et de préf en anglais, par ex bg1 sera plus compris par tous que fond1*/
+:root {
+  --bg1: #302c63;
+  --bg2: #201c46;
+
+  /* --clr2: #6ea3c9; non utilisée? */
+
+  --primary-txt: #e5ebff;
+  --secondary-txt: #ffd34f;
+  --menu-txt: #6ec9c7;
+  --tertiary-txt: #6d83c9;
+  --fourth-txtandborders: #6ea3c9;
+
+  --audio-btn: #222222;
+
+  --font1: font1;
+  --font2: font2;
+  --font3: font3;
+}
+
+/* ------------- */
+/* ajouts ds user select */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--bg1);
+  background: -webkit-linear-gradient(20deg, var(--bg1), var(--bg2));
+  background: linear-gradient(20deg, var(--bg1), var(--bg2));
+}
+
+/* ------------- */
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* attention justify génère une alerte wave car ça peut créer des choses pas jolies avec des écarts entre les mots,
+ en règle générale il est préférable d'éviter de l'utiliser*/
+.text-justify {
+  text-align: justify;
+}
+
+/* .citation in english please!*/
+.quote {
+  text-align: center;
+  font-style: italic;
+  /* ah si --clr2 ce sont les borders, un oubli */
+  /* border-top: 1px solid #6ea3c9;
+  border-bottom: 1px solid #6ea3c9; */
+  border-top: 1px solid var(--fourth-txtandborders);
+  border-bottom: 1px solid var(--fourth-txtandborders);
+}
+
+/* ------------- */
+
+#menu {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#menu svg {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  overflow: visible;
+}
+
+#nav {
+  cursor: default;
+  pointer-events: none;
+  position: fixed;
+  height: 10vh;
+  width: 10vh;
+  padding: 2vh;
+  top: -12vh;
+  right: 0;
+  opacity: 0;
+  overflow: visible;
+  transition: top 2s, opacity 0.5s;
+}
+
+#nav.show {
+  cursor: pointer;
+  pointer-events: all;
+  top: 0;
+  opacity: 0.7;
+}
+
+#nav.show:hover {
+  opacity: 1;
+}
+
+/*  */
+
+/* #piano */
+#menu-svg text {
+  /* définir une font par défaut si l'autre est cassée */
+  font-family: var(--font1), sans-serif;
+}
+
+.menu-btn {
+  cursor: default;
+  pointer-events: none;
+  fill: var(--menu-txt);
+  transition: fill 0.5s;
+}
+
+.menu-btn:hover {
+  fill: var(--secondary-txt);
+}
+
+.menu-btn.actif {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+/*  */
+
+#piano-key path {
+  transform-origin: center center;
+
+  transform: translateY(-50vh) scale(1);
+  opacity: 0;
+  fill: transparent;
+
+  transition-property: transform, opacity, fill;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+
+#piano-key path.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  fill: #fff;
+}
+
+#piano-key path.invert {
+  transform: translateY(0) scale(2);
+  opacity: 0;
+}
+
+/* ------------- */
+
+.article-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 200%;
+  top: 0;
+  color: #fff;
+
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.article-container.show {
+  left: 0;
+  opacity: 1;
+}
+
+.article-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: stretch;
+  align-items: center;
+}
+
+.article-content > * {
+  opacity: 0;
+}
+
+/*  */
+
+/* p.titre devenu h1 */
+h1 {
+  width: 100%;
+  padding-left: 6vmin;
+  font-family: var(--font1), sans-serif;
+  font-size: 8vmin;
+  color: var(--secondary-txt);
+  text-shadow: 1.5vmin 1.5vmin 0 #0006;
+}
+
+.article-container article {
+  padding: 2vmin;
+  font-family: var(--font3), sans-serif;
+  font-size: 2.2vmin;
+  text-rendering: optimizeLegibility;
+  color: var(--primary-txt);
+}
+
+/* ------------- */
+
+#city svg {
+  z-index: -1;
+  height: 80%;
+  width: 80%;
+  top: 10%;
+  left: 20%;
+  overflow: visible;
+}
+
+#city svg text {
+  font-family: var(--font2), sans-serif;
+  transform-origin: center;
+}
+
+/* ------------- */
+
+.background-image {
+  z-index: -1;
+  position: fixed;
+  height: 120%;
+  width: 20%;
+  justify-self: center;
+  align-self: center;
+  overflow: hidden;
+  box-shadow: 2vmin 0 0 #2223;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.background-image.show {
+  opacity: 1;
+}
+
+.background-image::before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  animation: wave 12s ease-in-out alternate-reverse infinite;
+  -webkit-animation: wave 12s ease-in-out alternate-reverse infinite;
+  /* ajout -webkit (vendor prefixe) pour être sur que ça fonctionne sur tous les navigateur 
+  et donc également ajout d'une keyframes*/
+}
+
+.background-image[data-img="lettre"] {
+  top: -10%;
+  left: 14%;
+  transform: rotate(-20deg);
+}
+
+.background-image[data-img="partition"] {
+  top: -10%;
+  left: 40%;
+  transform: rotate(-20deg);
+}
+
+.background-image[data-img="piano"] {
+  top: -10%;
+  left: 35%;
+  transform: rotate(15deg);
+}
+
+/* fichier IMG renommé en assets */
+/* images déplacées dans assets/images */
+.background-image[data-img="lettre"]::before {
+  background-image: url(../assets/images/lettre.jpg);
+}
+
+.background-image[data-img="partition"]::before {
+  background-image: url(../assets/images/partition.jpg);
+}
+
+.background-image[data-img="piano"]::before {
+  background-image: url(../assets/images/piano.jpg);
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(2.4);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(2.4);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* ------------- */
+
+.audio {
+  width: 80%;
+  justify-self: center;
+  font-size: 2vmin;
+  text-align: center;
+  background-color: var(--tertiary-txt);
+  color: var(--audio-btn);
+  border-radius: 2vmin;
+  padding: 1vmin;
+}
+
+.audio:hover {
+  background-color: var(--audio-btn);
+  color: var(--tertiary-txt);
+}
+
+/* ------------- */
+
+.link {
+  cursor: pointer;
+  font-size: 3vmin !important;
+  color: var(--primary-txt);
+  transition: color 0.5s;
+}
+
+.link:hover {
+  color: var(--secondary-txt);
+}
+
+.link::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  background-color: #222;
+  transition: transform 0.35s;
+  height: 5vh;
+  width: 5vh;
+  transform: translate(-50%, 0) rotateY(0) rotate(45deg) scale(0.8);
+  transition-delay: 0.2s;
+}
+
+.link:hover::before {
+  transform: translate(-50%, 0) rotateY(180deg) rotate(45deg) scale(1.4);
+}
+
+/* ------------- */
+
+#home {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+#home p:nth-child(1),
+#home p:nth-child(2) {
+  padding: 1vmin 10vmin;
+  color: var(--primary-txt);
+}
+
+#home p:nth-child(1) {
+  font-size: 12vmin;
+  font-family: var(--font2), sans-serif;
+  opacity: 0.7;
+  text-align: center;
+  font-style: italic;
+}
+
+#home p:nth-child(2),
+#home p:nth-child(3) {
+  font-family: var(--font3), sans-serif;
+}
+
+#home p:nth-child(2) {
+  font-size: 4vmin;
+}
+
+#home p:nth-child(3) {
+  cursor: pointer;
+  font-size: 3vmin;
+  color: var(--tertiary-txt);
+  transition: color 0.5s;
+}
+
+#home p:nth-child(3):hover {
+  color: var(--secondary-txt);
+}

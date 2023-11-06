@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ajout meta description important pour SEO -->
+    <meta name="description" content="Portfolio de Chopin rélisé dans le cadre d'un concours">
+    <!-- d'autres balises peuvent être utiles les opengraph par ex -->
+    <title>Frederic Chopin - Portfolio</title>
+
+    <!-- changement des noms de dossiers, habituellement on les mets en minuscule -->
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/grid.css" rel="stylesheet" type="text/css">
+
+    <script src="./js/app.js" type="module"></script>
+
+</head>
+
+<body>
+    <main>
+
+        <!-- alertes (moins grave que erreur) w3c et wave car pas de niveau de titres -->
+
+        <div>
+            <div data-ref="0" class="background-image" data-img="partition"></div>
+            <div data-ref="1" class="background-image" data-img="piano"></div>
+            <div data-ref="2" class="background-image" data-img="lettre"></div>
+        </div>
+
+        <!-- j'ai changé 5 divs en sections correspondant aux "pages" je trouve que ça structure mieux le code -->
+        <section id="menu">
+
+            <svg viewBox="0 0 110 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+                <!-- w3c validator dit "Attribute transform-origin not allowed on element g at this point.", c'est considéré comme une erreur, bon je ne touche pas, 
+                trop peur de faire exploser, infos là https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform-origin -->
+                <g id="menu-svg" transform-origin="55 50">
+
+                    <g id="piano-key">
+                        <path d="M0  80 v-70 h8 v40 h4 v30 z" />
+                        <path d="M14 90 v-40 h4 v-30 h4 v30 h4 v40 z" />
+                        <path d="M28 70 v-20 h4 v-50 h8 v70 z" />
+                        <path d="M42 85 v-60 h8 v25 h4 v35 z" />
+                        <path d="M56 80 v-30 h4 v-35 h4 v35 h4 v30 z" />
+                        <path d="M70 100 v-50 h4 v-20 h4 v20 h4 v50 z" />
+                        <path d="M84 70 v-20 h4 v-45 h8 v65 z" />
+                        <path d="M98 80 v-65 h12 v65 z" />
+                    </g>
+
+                    <g font-size="8.5" transform="rotate(-90)">
+                        <!-- utiliser les roots -->
+                        <g opacity="0"> <text fill=var(--tertiary-txt) x="-78" y="8.7">Frederic</text> </g>
+                        <g opacity="0"> <text fill=var(--tertiary-txt) x="-73" y="22.7">Chopin</text> </g>
+                        <g opacity="0"> <text fill=var(--fourth-txtandborders) x="-83" y="50.7">Portfolio</text> </g>
+                        <g opacity="0"> <text class="menu-btn" data-ref="0" x="-90" y="78.7">dzien dobry</text> </g>
+                        <g opacity="0"> <text class="menu-btn" data-ref="1" x="-67" y="92.7">opus</text> </g>
+                        <g opacity="0"> <text class="menu-btn" data-ref="2" x="-79" y="106.7">contact</text> </g>
+                    </g>
+
+                </g>
+
+            </svg>
+
+        </section>
+
+        <!-- DZIEN DOBRY -->
+        <section class="article-container" data-ref="0">
+
+            <div class="article-content">
+
+                <article id="city" class="grid-06">
+                    <svg viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g font-size="20" fill="#222222">
+                            <text x="20" y="15">ville 1</text>
+                            <text x="40" y="40">ville 2</text>
+                            <text x="15" y="60">Ville 3</text>
+                        </g>
+                    </svg>
+                </article>
+                <!-- nom de class et id en anglais et/ou plus significatifs, p class titre changés en h1, wave met moins d'alertes mais w3c autant -->
+                <h1 class="title grid-01 text-left">Bonjour Djen Dobry</h1>
+
+                <article class="grid-02 text-left">
+                    Je m'appelle Frédéric Chopin.<br>
+                    J'ai certes véçu peu de temps, mais alors ... Quelle vie !
+                </article>
+
+                <article class="grid-03 text-right">
+                    Né en 1810 près de Varsovie, très tôt la passion pour le piano occupe mon existence.<br>
+                    A l'âge de 6 ans je fais résonner mes premières gammes et accords.
+                </article>
+
+                <article class="grid-04 text-justify">
+                    <p> J'ai pas mal voyagé dans ma vie. </p>
+                    <br>
+                    <p>
+                        De la terre natale - la Pologne, la Prusse, l'Empire Austro-Hongrois,
+                        L'Espagne et l'Italie, L'Ecosse et l'Angleterre, c'est finalement en France où j'ai passé le
+                        plus de temps. Sans doute mon amitié avec Eugène Delacroix et ma relation amoureuse avec
+                        George Sand y sont pour beaucoup. Vous trouverez trace de mes pérégrinations au travers de
+                        plusieurs de mes compositions, dont les noms sont les gardiens mémoriels.
+                    </p>
+                </article>
+
+                <article class="grid-05 text-center"><i><b>Marzurkas, Polonaises, Ecossaises ... </b></i></article>
+
+            </div>
+
+        </section>
+
+        <!-- OFFRANDE MUSICALE -->
+        <section class="article-container" data-ref="1">
+
+            <div class="article-content">
+
+                <h1 class="title grid-01 text-left">Offrande musicale</h1>
+
+                <article class="grid-11 text-center">
+                    Quelques notes de musique agrémentées de quelques quotes afin de mieux nous connaître ...
+                </article>
+
+                <article class="grid-12 quote">
+                    Il n'y a rien de plus odieux que la musique sans signification cachée.
+                </article>
+
+                <article class="grid-13 quote">
+                    La simplicité est la réalisation finale. Après avoir joué une quantité
+                    considérable de notes et d'autres notes, c'est la simplicité qui apparaît comme la récompense
+                    suprême de l'art.</article>
+
+                <article class="grid-14 quote">
+                    Bach est comme un astronome qui, à l'aide de chiffreurs, trouve les étoiles les plus
+                    merveilleuses... Beethoven a embrassé l'univers avec la puissance de son esprit... Je ne monte pas
+                    si haut. Il y a longtemps, j'ai décidé que mon univers serait l'âme et le coeur de l'homme.
+                </article>
+
+                <div class="grid-15 audio" data-mus="0">Etude opus 10 n°3</div>
+                <div class="grid-16 audio" data-mus="1">Valse opus 18 en Mi bémol majeur</div>
+                <div class="grid-17 audio" data-mus="2">Valse opus 64 n°1, "Valse du petit chien"</div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="article-container" data-ref="2">
+
+            <div class="article-content">
+
+                <h1 class="title grid-01 text-left">Prolonger l'aventure</h1>
+
+                <article class="grid-21 text-center">Impossible de se contacter pour le moment ?</article>
+
+                <article class="grid-22 text-justify">
+                    La musique est là pour abolir le temps et l'espace. Lorsque vous entendez mes quelques notes, c'est
+                    un peu de mes émotions que je chuchote à votre
+                    oreille. Voici quelques liens qui vous permettront de poursuivre notre discussion.
+                </article>
+
+                <article class="grid-23">
+                    <div class="link" data-lnk="0" title="Institut Chopin"> twitter </div>
+                    <div class="link" data-lnk="1" title="page Wikipedia"> wikipedia </div>
+                    <div class="link" data-lnk="2" title="Chopin vu par Chopin"> canal&nbsp;académies </div>
+                    <div class="link" data-lnk="3" title="Timeless classical music"> youtube </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <div id="nav">
+            <svg viewBox="0 0 40 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" overflow="visible">
+                <g fill="#fff">
+                    <path d="M0  40 v-70 h8 v40 h4 v30 z" />
+                    <path d="M14 50 v-40 h4 v-30 h4 v30 h4 v40 z" />
+                    <path d="M28 30 v-20 h4 v-50 h8 v70 z" />
+                </g>
+            </svg>
+        </div>
+
+        <section id="home">
+            <p>
+                «&nbsp;Et puis la note bleue résonne et nous voilà dans l'azur de la
+                nuit transparente&nbsp;...&nbsp;»
+            </p>
+            <p>
+                George Sand,<i>Impressions et souvenirs</i>
+            </p>
+            <!-- pas certaine que ça soit une bonne idée pour l'accessibilité, navigation au clavier toussa toussa, vaudrait mieux des bouttons  -->
+            <p id="button-enter">continuer</p>
+        </section>
+
+    </main>
+</body>
+
+</html>
