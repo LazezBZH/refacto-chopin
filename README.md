@@ -2,7 +2,7 @@
 
 Afin de donner des tips de "bonne partique" dans un premier temps puis voir le js par la suite.
 
-Code initial créé dan le cadre du concours S2#2 du designer du web
+Code initial créé dans le cadre du concours S2#2 du designer du web
 
 - Repositoy d'origine: [lien initial repo](https://github.com/etinmus/portfoliochopin)
 
