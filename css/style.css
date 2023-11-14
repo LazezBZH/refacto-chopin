@@ -406,6 +406,11 @@ h1 {
   transform: translate(-50%, 0) rotateY(180deg) rotate(45deg) scale(1.4);
 }
 
+/* NEW si on passe les links directement ds html */
+
+a.link {
+  text-decoration: none;
+}
 /* ------------- */
 
 #home {
