@@ -23,6 +23,6 @@ Dans le dosier sauvegarde se trouvent:
 
 # accessoirement je renomme app.js en script.js comme ça se fait le plus souvent
 
-- je le place juste avant </body> comme recommandé pour ne pas bloquer le chargement de la page, et exécuter les scripts uniquement lorsque le DOM est prêt.
+- je le place juste avant la fermeture de body comme recommandé pour ne pas bloquer le chargement de la page, et exécuter les scripts uniquement lorsque le DOM est prêt.
 
 - j'enlève le type module, inutile ici
