@@ -1,6 +1,6 @@
 # liens
 
-Pourquoi les générer en js? d'après moi c'est ce compliquer la vie sans intéret (ou alors je ne l'ai pas vu) par rapport à les mettre directement dans le html
+Pourquoi les générer en js? d'après moi c'est se compliquer la vie sans intéret (ou alors je ne l'ai pas vu) par rapport à les mettre directement dans le html
 
 # audios
 
