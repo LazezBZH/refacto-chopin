@@ -4,11 +4,11 @@ Afin de donner des tips de "bonne partique" dans un premier temps puis voir le j
 
 Code initial créé dan le cadre du concours S2#2 du designer du web
 
-- Repositoy d'origine: [lien initial repo](https://github.com/etinmus/portfoliochopin)
+- Repository d'origine: [lien initial repo](https://github.com/etinmus/portfoliochopin)
 
 ## Attention
 
-Je n'ai pas la science infuse, j'ai pu commettre des erreurs ou des omissions
+> Je n'ai pas la science infuse, j'ai pu commettre des erreurs ou des omissions
 
 ## Lundi 6 nov 23
 
@@ -23,6 +23,7 @@ Je n'ai pas la science infuse, j'ai pu commettre des erreurs ou des omissions
 ## à faire
 
 - voir js
+  [questions sur le js](/assets/questions.md)
 
 - voir accessibilité
 
