@@ -5,6 +5,7 @@ Pourquoi les générer en js? d'après moi c'est se compliquer la vie sans inté
 # audios
 
 Même question
+EDIT j'ai compris l'intéret de js dans ce cas
 
 # animations de la nav dans une class
 
